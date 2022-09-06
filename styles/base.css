@@ -1,0 +1,169 @@
+/* variables */
+:root {
+  --primary: #4E8090;
+  --dark-accent: #D0D2c6;
+  --light-accent: #52adc0;
+  --dark: #010409;
+  --light: #F7F3F5;
+  --header-background: #161b22;
+  --header-text: #f0f6fc;
+  --background1: #0d1117;
+  --text: #c9d1d9;
+  --background2: #010409;
+
+  --circuit-background: url("/assets/circuit_board_inverted.png")
+
+}
+
+* {
+  box-sizing: border-box;
+}
+/* layout */
+html {
+  color: var(--text);
+  background: var(--circuit-background) repeat;
+}
+body {
+  margin: 0;
+}
+#content {
+  width: 100%;
+}
+.container {
+  width: auto;
+  position: relative;
+  margin: 0 auto;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+.hero {
+  width: auto;
+  padding: 128px 0;
+  text-align: center;
+  position: relative;
+}
+.hero > .text {
+  display: inline;
+  vertical-align: middle;
+  max-width: 50%;
+  font-size: 2rem;
+}
+.section {
+  margin: 0 0 64px 0;
+  padding: 64px 0 0 0;
+}
+.card {
+  border-radius: 12px;
+  box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.8);
+  padding: 12px;
+}
+.card:hover {
+  box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.8);
+}
+.columns {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin: 0 -6px;
+}
+.column {
+  margin: 0 12px;
+}
+
+.vertically-center-child {
+  display: table;
+}
+
+.vertically-center-child > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+
+
+/* content */
+
+header > .columns {
+  justify-content: start;
+  
+}
+header {
+  background: var(--header-background);
+  color: var(--header-text);
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 32px 32px;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+}
+.header-link {
+  margin: 0 32px 0 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 6px;
+}
+
+.header-link:hover {
+  color: var(--light-accent);
+}
+
+#social-links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  flex-grow: 1;
+}
+
+#social-links img {
+  margin-left: 32px;
+  width: 50px;
+}
+
+
+button {
+  background-color: var(--primary);
+  padding: 6px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+a {
+  color: white;
+}
+
+.background-1 {
+  background: var(--background1);
+  color: var(--text);
+}
+
+.background-2 {
+  background: var(--background2);
+  color: var(--text);
+}
+
+

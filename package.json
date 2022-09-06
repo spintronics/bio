@@ -1,0 +1,23 @@
+{
+  "name": "kevin_brown_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "lessc css/main.less style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamu-edu-students/kevin_brown_csce_313_project1.git"
+  },
+  "author": "Kevin Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamu-edu-students/kevin_brown_csce_313_project1/issues"
+  },
+  "homepage": "people.tamu.edu/~quark",
+  "devDependencies": {
+    "less": "^4.1.3"
+  }
+}

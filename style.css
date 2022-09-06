@@ -1,0 +1,152 @@
+/* variables */
+:root {
+  --primary: #4E8090;
+  --dark-accent: #D0D2c6;
+  --light-accent: #52adc0;
+  --dark: #010409;
+  --light: #F7F3F5;
+  --header-background: #161b22;
+  --header-text: #f0f6fc;
+  --background1: #0d1117;
+  --text: #c9d1d9;
+  --background2: #010409;
+
+}
+/* layout */
+html {
+  color: var(--text);
+  background: var(--background1);
+}
+body {
+  margin: 0;
+}
+#content {
+  width: 100%;
+}
+.container {
+  width: auto;
+  position: relative;
+  margin: 0 auto;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+.hero {
+  width: auto;
+  padding: 64px 128px;
+  text-align: center;
+  position: relative;
+}
+.hero > .text {
+  display: inline;
+  vertical-align: middle;
+  max-width: 50%;
+  font-size: 2rem;
+}
+.section {
+  margin: 0 0 64px 0;
+  padding: 64px 0 0 0;
+}
+.card {
+  border-radius: 12px;
+  box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.8);
+  padding: 12px;
+}
+.card:hover {
+  box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.8);
+}
+.columns {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 0 -6px;
+}
+.column {
+  margin: 12px;
+}
+
+
+/* content */
+
+img {
+  border-radius: 10px;
+}
+
+header > .columns {
+  justify-content: start;
+  
+}
+header {
+  background: var(--header-background);
+  color: var(--header-text);
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 16px;
+}
+.header-link {
+  padding: 16px 16px 16px 0;
+  margin: 16px 16px 16px 0;
+  text-decoration: none;
+}
+.photo {
+  width: 30%;
+  border-radius: 12px;
+}
+.photo > img {
+  max-width: 100%;
+  min-width: 200px;
+  height: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bio {
+  font-size: 1.5rem;
+  display: table;
+  text-align: center;
+}
+.bio > p {
+  display: table-cell;
+  vertical-align: middle;
+}
+button {
+  background-color: var(--primary);
+  padding: 6px;
+  color: white;
+  font-size: 1.2rem;
+}
+.background-dark-accent {
+  background-color: var(--dark-accent);
+}
+.background-light-accent {
+  background-color: var(--light-accent);
+}
+.background-light {
+  background-color: var(--light);
+  color: black;
+}
+
+a {
+  color: white;
+}
