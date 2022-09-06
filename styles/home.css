@@ -29,3 +29,11 @@
   display: table-cell;
   vertical-align: middle;
 }
+.landing {
+  /* opacity: .95; */
+  background-color: var(--header-background);
+  /* filter: opacity(.95); */
+}
+.mission {
+  opacity: 95%;
+}
