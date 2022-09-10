@@ -1,29 +1,43 @@
 function main() {
   let toggleTheme = document.getElementById("toggle-theme");
-  let theme = 0;
-  let root = document.documentElement;
+  let theme_style = document.getElementById("theme_style");
+  let theme = theme_style.getAttribute("href").includes("light");
 
 
 
   toggleTheme.addEventListener("click", () => {
     theme = !theme;
+    debugger;
     if (theme) {
       // light theme
-      root.style.setProperty("--header-background", "#fff");
-      root.style.setProperty("--header-text", "#000");
-      root.style.setProperty("--background1", "#F7F3F5");
-      root.style.setProperty("--background2", "#EFF7FF");
-      root.style.setProperty("--text", "#000");
+      // switch stylesheet
+      theme_style.href = theme_style.href.replace("dark", "light");
 
-      toggleTheme.querySelector("img").src = "/assets/icons/sunny.png";
+      // switch icon
+      toggleTheme.querySelector("img").src = toggleTheme.querySelector("img").src.replace("half-moon", "sunny");
+
+      // switch home link
+      let home = document.querySelector(["[href*='index.html']"]);
+      if (home) {
+        home.href = home.href.replace("index.html", "index-light.html");
+      }
+      // switch links
+      document.querySelectorAll("[href*='dark.html']").forEach((el) => {
+        el.href = el.href.replace("dark", "light");
+      });
+
+
     } else {
       // dark theme
-      root.style.setProperty('--header-background', '#161b22');
-      root.style.setProperty('--header-text', '#f0f6fc');
-      root.style.setProperty('--background1', '#0d1117');
-      root.style.setProperty('--text', '#c9d1d9');
-      root.style.setProperty('--background2', '#010409');
-      toggleTheme.querySelector("img").src = "/assets/icons/half-moon.png";
+      theme_style.href = theme_style.href.replace("light", "dark");
+      toggleTheme.querySelector("img").src = toggleTheme.querySelector("img").src.replace("sunny", "half-moon");
+      let home = document.querySelector(["[href*='index-light.html']"]);
+      if (home) {
+        home.href = home.href.replace("index-light.html", "index.html");
+      }
+      document.querySelectorAll("[href*='light.html']").forEach((el) => {
+        el.href = el.href.replace("light", "dark");
+      });
     }
   })
 }

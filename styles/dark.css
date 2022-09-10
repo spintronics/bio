@@ -1,0 +1,61 @@
+:root {
+  --primary: #30c5ff;
+  --secondary: #ff312e;
+  --mid: #726953;
+  --dark: #010409;
+  --light: #F7F3F5;
+  --header-background: #161b22;
+  --header-text: #f0f6fc;
+  --background1: #161b22;
+  --text: #c9d1d9;
+  --background2: #010409;
+  --circuit-background: url("/assets/circuit_board_dark.png");
+}
+html {
+  color: var(--text);
+  background: var(--circuit-background) repeat;
+}
+a {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+a:hover {
+  filter: brightness(1.2);
+}
+a:active {
+  filter: brightness(0.8);
+}
+header .header-link {
+  color: var(--header-text);
+  border: none;
+}
+header .header-link:hover {
+  color: var(--primary);
+  filter: brightness(1.5);
+}
+header .header-link.active {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+header .header-link:active {
+  filter: brightness(0.8);
+}
+.landing {
+  background-color: var(--header-background);
+}
+.background1 {
+  background: var(--background1);
+  color: var(--text);
+}
+.background2 {
+  background: var(--background2);
+  color: var(--text);
+}
+.bio {
+  background: var(--mid);
+  color: var(--text);
+  box-shadow: 0px 0px 50px 10px var(--mid);
+}
+.photo {
+  box-shadow: 0px 0px 50px 10px var(--mid);
+}
