@@ -5,36 +5,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kevin Brown</title>
-    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link id="theme_style" rel="stylesheet" href="../styles/light.css" />
   </head>
   <body>
     <header>
       <nav class="columns">
         <div class="column vertically-center-child">
-          <a href="/index-light.html" class="header-link"> home </a>
+          <a href="../index-light.html" class="header-link"> home </a>
         </div>
         <div class="column vertically-center-child">
-          <a href="/pages/portfolio.html" class="header-link"> portfolio </a>
+          <a href="../pages/portfolio-light.html" class="header-link">
+            portfolio
+          </a>
         </div>
         <div class="column vertically-center-child">
-          <a href="/pages/qualifications.html" class="header-link">
+          <a
+            href="../pages/qualifications-light.html"
+            class="header-link active"
+          >
             qualifications
           </a>
         </div>
         <div class="column vertically-center-child">
-          <a href="/pages/service.html" class="header-link"> service </a>
+          <a href="../pages/service-light.html" class="header-link"> service </a>
         </div>
       </nav>
       <div id="social-links">
-        <a href="https://www.linkedin.com/in/kbrown3">
-          <img src="/assets/icons/linkedin.png" alt="linkedin" />
+        <span id="toggle-theme">
+          <img src="../assets/icons/sunny.png" />
+        </span>
+        <a target="_blank" href="https://www.linkedin.com/in/kbrown3">
+          <img src="../assets/icons/linkedin.png" alt="linkedin" />
         </a>
-        <a href="https://www.github.com/spintronics">
-          <img src="/assets/icons/github.png" alt="github" />
+        <a target="_blank" href="https://www.github.com/spintronics">
+          <img src="../assets/icons/github.png" alt="github" />
+        </a>
+        <a target="_blank" href="https://www.codewars.com/users/spintron">
+          <img src="../assets/icons/codewars.svg" alt="codewars" />
         </a>
       </div>
     </header>
-    <div id="content" style="background: var(--header-background)"></div>
+    <main>
+      <section>
+        <div class="container background2">
+          <article>
+            <p>
+              I have worked an several projects in my free time. Sometimes I
+              have a specific goal in mind when I start a project but often I am
+              just using an idea as focus to try out new tools. I am most
+              interested in learning software architecture so learning how to
+              select the right tools and build a system from the ground up is
+              important to me.
+            </p>
+            <p>
+              When i first started trying to create projects, I tried to use the
+              most common tools at the time (react/express/bootstrap). Using
+              these tools helped me appreciate how to build a modular user
+              interface and seperate the display details from the business
+              logic.
+            </p>
+            <p>
+              The next time I started a project I was interested in exploring
+              how libraries implement server-side rendering. My disorganized
+              ruminations can be found over on my github page under the name
+              <a target="_blank" href="https://github.com/spintronics/astral"
+                >Astral</a
+              >. There is virtually no substance to this project. It was simply
+              a playground to try out a few ideas. I was fascinated by the
+              posibility of reusing server and client code to manage complexity.
+              Since the server needed to have access to the client components I
+              had to figure out a way to preserve the continuity between the
+              server-side render of a page and the client side. Although I
+              eventually created a crudely working implementation, I would do it
+              differently now.
+            </p>
+            <p>
+              Next I will describe my current project, which has been my most
+              ambitious to date.
+              <a target="_blank" href="https://github.com/spintronics/Graphite"
+                >Graphite</a
+              >
+              is currently a work in progress where I am trying to build a
+              learning management system similar to Canvas. Admittedly, this
+              idea is not particularly original but again I am using it to
+              practice the art of software architecture. I have gone through
+              several iterations of building the foundation for this project.
+              The way I see it, one of the biggest problems in building large
+              software systems is managing complexity. In particular I tend to
+              balk at the idea of defining the same models in different
+              languages on both the server and client. This inevitably leads to
+              overhead in keeping the two in sync. Typically we define some
+              object first by describing how it will be stored in the database
+              using a schema. We then take that description and build our
+              back-end models based on its shape. Next we build an api so that
+              the client can interface with these objects. The problem is that
+              we must define a this additional interface to bridge the gap
+              between these two systems. Each change to the schema now requires
+              that we update the server, client, and api models to preserve the
+              interoperability of the system. This is incredibly wasteful and so
+              I spent considerable time trying to find a way to avoid this. I
+              will skip the details of my first few attempts instead describe my
+              current solution to this problem.
+            </p>
+            <p>
+              I knew that I wanted to use Flutter to implement the user
+              interface for this application because of the promise of
+              effortless cross-platform compatability across all devices.
+              Choosing this tool came with a price though. It did not seem to me
+              like Dart was a language which had robust tooling for building
+              webservers. Since I did not want to define my models in two
+              different languages I decided to use a tool called gRPC to act as
+              the interface between the client and server. The most useful
+              feature of gRPC is that it can generate stubs for both the client
+              and server. Essentially it allows me to define my models in one
+              place then generate typesafe equivalents in my two languages, Dart
+              and Go. This allows me to write models specific to each domain
+              that extend the structure of these shared models. Unfortunately I
+              still needed to redefine the models in an ORM but i found that to
+              be a small issue since servers generally need to translate their
+              models to database equivalents anyway.
+            </p>
+            <p>
+              I started with test-driven development and then implemented the
+              core functionality to pass those cases. My next task is to build
+              an administration site to interact with the database from the
+              client. This is a good feature to implement first since it is
+              required and helps to test out the functionality of the system as
+              it is being developed. If this every becomes a real product I
+              would like to keep it open-source and market it towards
+              home-schooling parents as a better way to help manage their
+              children's education.
+            </p>
+          </article>
+        </div>
+        <div class="container"></div>
+      </section>
+    </main>
   </body>
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </html>
