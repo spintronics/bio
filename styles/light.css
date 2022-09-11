@@ -234,7 +234,7 @@ footer .container a {
   --background1: #f6f8fa;
   --text: #010409;
   --background2: #fff;
-  --circuit-background: url("../assets/circuit_board_light.png");
+  --circuit-background: url("/~quark/assets/circuit_board_light.png");
 }
 html {
   color: var(--text);

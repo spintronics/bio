@@ -9,7 +9,7 @@
   --background1: #161b22;
   --text: #c9d1d9;
   --background2: #010409;
-  --circuit-background: url("/assets/circuit_board_dark.png");
+  --circuit-background: url("/~quark/assets/circuit_board_dark.png");
 }
 html {
   color: var(--text);
