@@ -105,7 +105,9 @@ article {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
+
 
 
 
@@ -147,6 +149,10 @@ header {
   a {
     border: none;
   }
+}
+
+#toggle-theme {
+  cursor: pointer;
 }
 
 #social-links img {
@@ -197,5 +203,40 @@ button {
   font-size: 2rem;
 }
 
+#skills {
+  .skill-group {
+    padding: 32px 0;
+  }
+  .skill {
+    padding: 16px 0;
+    display: flex;
+  }
+  .image-container {
+    height: 150px;
+    width: 200px;
+    margin-right: 32px;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .skill-indicator-container {
+    flex-grow: 1;
+    .skill-indicator {
+      transition: all 1s ease-out;
+      background: rgb(255, 0, 0);
+      opacity: 0;
+      height: 100%;
+      width: 0;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  // margin: 0;
+  padding: 0;
+}
 
 

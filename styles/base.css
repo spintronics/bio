@@ -97,6 +97,7 @@ article {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 /* content */
 header > .columns {
@@ -131,6 +132,9 @@ header > .columns {
 }
 #social-links a {
   border: none;
+}
+#toggle-theme {
+  cursor: pointer;
 }
 #social-links img {
   margin-left: 32px;
@@ -171,4 +175,40 @@ button {
 .mission {
   opacity: 95%;
   font-size: 2rem;
+}
+#skills .skill-group {
+  padding: 32px 0;
+}
+#skills .skill {
+  padding: 16px 0;
+  display: flex;
+}
+#skills .image-container {
+  height: 150px;
+  width: 200px;
+  margin-right: 32px;
+}
+#skills .image-container img {
+  height: 100%;
+  width: auto;
+}
+#skills .skill-indicator-container {
+  flex-grow: 1;
+}
+#skills .skill-indicator-container .skill-indicator {
+  transition: all 1s ease-out;
+  background: #ff0000;
+  opacity: 0;
+  height: 100%;
+  width: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  padding: 0;
 }

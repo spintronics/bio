@@ -1,10 +1,31 @@
-function main() {
+function setSkillProgress(element) {
+  if (!element) return;
+
+  let aptitude = element.getAttribute("aptitude");
+
+  if (!aptitude) return;
+
+  let indicator = element.querySelector(".skill-indicator");
+
+  if (!indicator) return;
+
+  indicator.style.transition = `all ${.2 * aptitude}s ease-in-out`;
+
+  indicator.style.width = aptitude * 10 + "%";
+
+  indicator.style.backgroundColor = `rgb(${255 - aptitude * 25}, ${aptitude * 25}, 0)`;
+  indicator.style.opacity = 1;
+}
+
+function bindListeners() {
   let stylesheetElement = document.getElementById("theme_style");
   let theme = stylesheetElement.getAttribute("href").includes("light");
+  let toggleThemeButton = document.getElementById("toggle-theme");
 
 
 
-  toggleTheme.addEventListener("click", () => {
+
+  toggleThemeButton.addEventListener("click", () => {
 
     theme = !theme;
 
@@ -14,7 +35,7 @@ function main() {
       stylesheetElement.href = stylesheetElement.href.replace("dark", "light");
 
       // switch icon
-      toggleTheme.querySelector("img").src = toggleTheme.querySelector("img").src.replace("half-moon", "sunny");
+      toggleThemeButton.querySelector("img").src = toggleThemeButton.querySelector("img").src.replace("half-moon", "sunny");
 
       // switch home link
       let home = document.querySelector(["[href*='index.html']"]);
@@ -32,7 +53,7 @@ function main() {
       // dark theme
       stylesheetElement.href = stylesheetElement.href.replace("light", "dark");
 
-      toggleTheme.querySelector("img").src = toggleTheme.querySelector("img").src.replace("sunny", "half-moon");
+      toggleThemeButton.querySelector("img").src = toggleThemeButton.querySelector("img").src.replace("sunny", "half-moon");
 
       let home = document.querySelector(["[href*='index-light.html']"]);
       if (home) {
@@ -44,6 +65,13 @@ function main() {
       });
     }
   })
+}
+
+
+function main() {
+  bindListeners();
+
+  document.querySelectorAll(".skill").forEach(setSkillProgress);
 }
 
 document.addEventListener("DOMContentLoaded", main);
