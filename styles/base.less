@@ -1,8 +1,12 @@
 /* variables */
-
+:root {
+  --header-background: #161b22;
+  --header-text: #f0f6fc;
+}
 
 * {
   box-sizing: border-box;
+  transition: background-color 0.2s ease-in-out;
 }
 /* layout */
 
@@ -16,6 +20,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
+  transition: padding-top 0.5s ease;
 }
 main {
   flex-grow: 1;
@@ -131,11 +136,35 @@ header {
   padding: 32px 32px;
   display: flex;
   flex-flow: row nowrap;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  align-items: center;
   > .columns {
     justify-content: start;
   }
   font-weight: 500;
+  transition: top 0.5s ease;
+  .header-link {
+    color: var(--header-text);
+    border: none;
+    line-height: 3;
+    &:hover {
+      color: var(--primary);
+      filter: brightness(1.5);
+    }
+    &.active {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+    }
+    &:active {
+      filter: brightness(0.8);
+    }
+  }
+  background-color: #161b22;
 }
+
 .header-link {
   margin: 0 32px 0 0;
   text-decoration: none;
@@ -156,7 +185,7 @@ header {
   }
 }
 
-#toggle-theme {
+.toggle-theme {
   cursor: pointer;
 }
 
@@ -217,7 +246,7 @@ button {
     display: flex;
   }
   .image-container {
-    height: 150px;
+    height: 100px;
     width: 200px;
     margin-right: 32px;
     img {
@@ -255,4 +284,80 @@ footer {
     }
   }
 }
+aside#menu {
+  transition: all 0.5s ease;
+  transition-property: left, width;
+  position: fixed;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 150px 30px 0 30px;
+  width: 110px;
+  #menu-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    transition: all 0.5s ease;
+    img { 
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  z-index: 3;
+  &.active {
+    // .menu-link-tag {
+    //   display: inline !important;
+    // }
+    #menu-button {
+      transform: rotate(90deg);
+    }
+    width: 382.25px;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+
+  nav {
+    display: block;
+    position: static;
+    .menu-link {
+      padding-bottom: 32px;
+      cursor: pointer;
+      &.active, &:hover {
+        img {
+          filter: saturate(1);
+        }
+      }
+      img {
+        margin: 0;
+        width: 50px;
+        filter: saturate(0);
+      }
+      a {
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+      }
+      .menu-link-tag {
+        padding-left: 32px;
+        // display: none;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
 

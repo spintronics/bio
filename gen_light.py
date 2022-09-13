@@ -4,7 +4,7 @@ map = [
     ["pages/service-dark.html", "pages/service-light.html"],
     ["index.html", "index-light.html"],
     ["styles/dark.css", "styles/light.css"],
-    ["half-moon.png", "sunny.png"],
+    ["sunny.png", "half-moon.png"],
 ]
 
 files = [

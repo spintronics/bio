@@ -1,245 +1,25 @@
-/* variables */
-* {
-  box-sizing: border-box;
-}
-/* layout */
-html {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-}
-body {
-  margin: 0;
-}
-#content {
-  width: 100%;
-}
-.container {
-  width: auto;
-  position: relative;
-  margin: 0 auto;
-}
-@media screen and (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-.hero {
-  width: auto;
-  padding: 128px 0;
-  text-align: center;
-  position: relative;
-}
-.hero > .text {
-  display: inline;
-  vertical-align: middle;
-  max-width: 50%;
-  font-size: 2rem;
-}
-.section {
-  padding: 64px 0;
-}
-.card {
-  border-radius: 12px;
-  box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.8);
-  padding: 12px;
-}
-.card:hover {
-  box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.8);
-}
-.columns {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  margin: 0 -6px;
-}
-.column {
-  margin: 0 12px;
-}
-.vertically-center-child {
-  display: table;
-}
-.vertically-center-child > * {
-  display: table-cell;
-  vertical-align: middle;
-}
-/* basic elements */
-p {
-  margin: 0;
-  padding: 12px 0;
-}
-article {
-  font-size: 1.5rem;
-  line-height: 2;
-  text-align: justify;
-  padding: 32px 128px;
-  margin: 32px 0;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-/* content */
-header > .columns {
-  justify-content: start;
-}
-header {
-  background: var(--header-background);
-  color: var(--header-text);
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 32px 32px;
-  display: flex;
-  flex-flow: row nowrap;
-  flex-grow: 1;
-  font-weight: 500;
-}
-header > .columns {
-  justify-content: start;
-}
-.header-link {
-  margin: 0 32px 0 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 6px;
-  padding-left: 6px;
-}
-#social-links {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: end;
-  flex-grow: 1;
-}
-#social-links a {
-  border: none;
-}
-#toggle-theme {
-  cursor: pointer;
-}
-#social-links img {
-  margin-left: 32px;
-  width: 50px;
-}
-button {
-  padding: 6px;
-  color: white;
-  font-size: 1.2rem;
-}
-.photo {
-  width: 30%;
-  height: 100%;
-  width: auto;
-  font-size: 0;
-  line-height: 0;
-}
-.photo > img {
-  height: 100%;
-  width: auto;
-  max-width: 400px;
-  position: relative;
-  /* box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.8); */
-}
-.bio {
-  font-size: 1.5rem;
-  display: table;
-  text-align: center;
-  height: 100%;
-  padding: 32px;
-  text-align: justify;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.bio > p {
-  display: table-cell;
-  vertical-align: middle;
-}
-.mission {
-  opacity: 95%;
-  font-size: 2rem;
-}
-#skills .skill-group {
-  padding: 32px 0;
-}
-#skills .skill {
-  padding: 16px 0;
-  display: flex;
-}
-#skills .image-container {
-  height: 150px;
-  width: 200px;
-  margin-right: 32px;
-}
-#skills .image-container img {
-  height: 100%;
-  width: auto;
-}
-#skills .skill-indicator-container {
-  flex-grow: 1;
-}
-#skills .skill-indicator-container .skill-indicator {
-  transition: all 1s ease-out;
-  background: #ff0000;
-  opacity: 0;
-  height: 100%;
-  width: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 500;
-  padding: 0;
-}
-footer {
-  padding: 128px;
-  font-size: 2rem;
-}
-footer .container {
-  display: flex;
-  justify-content: space-between;
-}
-footer .container a {
-  border: none;
-}
 :root {
   --primary: #23967F;
   --secondary: #003844;
   --mid: #9d695a;
   --dark: #010409;
   --light: #f3ffff;
-  --header-background: #f3ffff;
-  --header-text: #010409;
-  --background1: #f6f8fa;
+  --aside-background: #e6f8ff;
+  --background1: #fff;
   --text: #010409;
-  --background2: #fff;
+  --background2: #EDF2F4;
   --circuit-background: url("/~quark/assets/circuit_board_light.png");
 }
 html {
   color: var(--text);
   background-color: var(--background1);
   background: var(--circuit-background) repeat;
+}
+nav {
+  position: absolute;
+}
+main {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 a {
   color: var(--primary);
@@ -251,23 +31,8 @@ a:hover {
 a:active {
   filter: brightness(0.5);
 }
-header .header-link {
-  color: var(--header-text);
-  border: none;
-}
-header .header-link:hover {
-  color: var(--primary);
-  filter: brightness(1.5);
-}
-header .header-link.active {
-  color: var(--primary);
-  border-bottom: 3px solid var(--primary);
-}
-header .header-link:active {
-  filter: brightness(0.8);
-}
 .landing {
-  background-color: var(--header-background);
+  background-color: var(--background1);
 }
 .background1 {
   background: var(--background1);
@@ -293,4 +58,11 @@ h5,
 h6 {
   color: var(--secondary);
   border-bottom: 3px solid var(--secondary);
+}
+aside#menu {
+  left: 0;
+  background-color: var(--aside-background);
+}
+header {
+  top: -118px;
 }

@@ -20,50 +20,61 @@ function setSkillProgress(element) {
 function bindListeners() {
   let stylesheetElement = document.getElementById("theme_style");
   let theme = stylesheetElement.getAttribute("href").includes("light");
-  let toggleThemeButton = document.getElementById("toggle-theme");
+  let toggleThemeButtons = document.getElementsByClassName("toggle-theme");
+  let menuButton = document.getElementById("menu-button");
+
+  menuButton.addEventListener("click", () => {
+    document.getElementById("menu").classList.toggle("active");
+  });
 
 
 
+  Array.from(toggleThemeButtons).forEach(toggleThemeButton => {
 
-  toggleThemeButton.addEventListener("click", () => {
+    toggleThemeButton.addEventListener("click", () => {
 
-    theme = !theme;
+      theme = !theme;
 
-    if (theme) {
-      // light theme
-      // switch stylesheet
-      stylesheetElement.href = stylesheetElement.href.replace("dark", "light");
+      if (theme) {
+        // light theme
+        // switch stylesheet
+        stylesheetElement.href = stylesheetElement.href.replace("dark", "light");
 
-      // switch icon
-      toggleThemeButton.querySelector("img").src = toggleThemeButton.querySelector("img").src.replace("half-moon", "sunny");
+        // switch icon
+        Array.from(toggleThemeButtons).forEach(button => {
+          button.querySelector("img").src = toggleThemeButton.querySelector("img").src.replace("sunny", "half-moon");
+        });
 
-      // switch home link
-      let home = document.querySelector(["[href*='index.html']"]);
-      if (home) {
-        home.href = home.href.replace("index.html", "index-light.html");
+        // switch home link
+        let home = document.querySelector(["[href*='index.html']"]);
+        if (home) {
+          home.href = home.href.replace("index.html", "index-light.html");
+        }
+
+        // switch links
+        document.querySelectorAll("[href*='dark.html']").forEach((el) => {
+          el.href = el.href.replace("dark", "light");
+        });
+
+
+      } else {
+        // dark theme
+        stylesheetElement.href = stylesheetElement.href.replace("light", "dark");
+
+        Array.from(toggleThemeButtons).forEach(button => {
+          button.querySelector("img").src = toggleThemeButton.querySelector("img").src.replace("half-moon", "sunny");
+        });
+
+        let home = document.querySelector(["[href*='index-light.html']"]);
+        if (home) {
+          home.href = home.href.replace("index-light.html", "index.html");
+        }
+
+        document.querySelectorAll("[href*='light.html']").forEach((el) => {
+          el.href = el.href.replace("light", "dark");
+        });
       }
-
-      // switch links
-      document.querySelectorAll("[href*='dark.html']").forEach((el) => {
-        el.href = el.href.replace("dark", "light");
-      });
-
-
-    } else {
-      // dark theme
-      stylesheetElement.href = stylesheetElement.href.replace("light", "dark");
-
-      toggleThemeButton.querySelector("img").src = toggleThemeButton.querySelector("img").src.replace("sunny", "half-moon");
-
-      let home = document.querySelector(["[href*='index-light.html']"]);
-      if (home) {
-        home.href = home.href.replace("index-light.html", "index.html");
-      }
-
-      document.querySelectorAll("[href*='light.html']").forEach((el) => {
-        el.href = el.href.replace("light", "dark");
-      });
-    }
+    })
   })
 }
 

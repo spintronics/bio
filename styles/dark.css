@@ -4,8 +4,6 @@
   --mid: #726953;
   --dark: #010409;
   --light: #F7F3F5;
-  --header-background: #161b22;
-  --header-text: #f0f6fc;
   --background1: #161b22;
   --text: #c9d1d9;
   --background2: #010409;
@@ -14,6 +12,14 @@
 html {
   color: var(--text);
   background: var(--circuit-background) repeat;
+}
+aside#menu {
+  left: -111px;
+  overflow: hidden;
+  background-color: #e6f8ff;
+}
+body {
+  padding-top: 118px;
 }
 a {
   color: var(--primary);
