@@ -22,6 +22,7 @@ function bindListeners() {
   let theme = stylesheetElement.getAttribute("href").includes("light");
   let toggleThemeButtons = document.getElementsByClassName("toggle-theme");
   let menuButton = document.getElementById("menu-button");
+  let menu = document.getElementById("menu");
 
   menuButton.addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("active");
@@ -34,6 +35,8 @@ function bindListeners() {
     toggleThemeButton.addEventListener("click", () => {
 
       theme = !theme;
+
+      menu.classList.remove("active");
 
       if (theme) {
         // light theme

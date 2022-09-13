@@ -129,8 +129,8 @@
           </a>
         </div>
         <div class="menu-link">
-          <a>
-            <span class="toggle-theme">
+          <a class="toggle-theme">
+            <span>
               <img src="../assets/icons/sunny.png" />
             </span>
             <span class="menu-link-tag"> toggle theme </span>
@@ -144,91 +144,82 @@
           <article>
             <h2>Personal Projects</h2>
             <p>
-              I have worked an several projects in my free time. Sometimes I
-              have a specific goal in mind when I start a project but often I am
-              just using an idea as focus to try out new tools. I am most
-              interested in learning software architecture so learning how to
-              select the right tools and build a system from the ground up is
-              important to me.
+              I have worked on several projects in my free time. Sometimes I
+              have a specific goal in mind when I start a project but often I
+              only looking to try out new tools. I am most interested in
+              learning software architecture so figuring out how to select the
+              right tools and build systems from the ground up is important to
+              me. I started as many do with a stack with a low learning curve
+              and tutorials in plentitude (react/express/bootstrap). Using these
+              tools helped me appreciate how to build modular user interfaces
+              and seperate the display details from the business logic.
             </p>
             <p>
-              When i first started trying to create projects, I tried to use the
-              most common tools at the time (react/express/bootstrap). Using
-              these tools helped me appreciate how to build a modular user
-              interface and seperate the display details from the business
-              logic.
-            </p>
-            <p>
-              The next time I started a project I was interested in exploring
+              During my time working with React I became interested in exploring
               how libraries implement server-side rendering. My disorganized
               ruminations can be found over on my github page under the name
               <a target="_blank" href="https://github.com/spintronics/astral"
                 >Astral</a
               >. There is virtually no substance to this project. It was simply
               a playground to try out a few ideas. I was fascinated by the
-              posibility of reusing server and client code to manage complexity.
+              posibility of reusing server and client code to reduce complexity.
               Since the server needed to have access to the client components I
               had to figure out a way to preserve the continuity between the
-              server-side render of a page and the client side. Although I
-              eventually created a crudely working implementation, I would do it
-              differently now.
+              server-side render of a page and the client side.
             </p>
             <p>
-              Next I will describe my current project, which has been my most
-              ambitious to date.
+              My current project is my most ambitious to date.
               <a target="_blank" href="https://github.com/spintronics/Graphite"
                 >Graphite</a
               >
-              is currently a work in progress where I am trying to build a
-              learning management system similar to Canvas. Admittedly, this
-              idea is not particularly original but again I am using it to
-              practice the art of software architecture. I have gone through
-              several iterations of building the foundation for this project.
-              The way I see it, one of the biggest problems in building large
-              software systems is managing complexity. In particular I tend to
-              balk at the idea of defining the same models in different
+              is intended to be a learning management system similar to Canvas.
+              Admittedly, this idea is not particularly original but I am mostly
+              using it to practice the art of software architecture. I have gone
+              through several iterations of building the foundation for this
+              project. The way I see it, one of the biggest problems in building
+              large software systems is managing complexity. In particular I
+              tend to balk at the idea of defining the same models in different
               languages on both the server and client. This inevitably leads to
               overhead in keeping the two in sync. Typically we define some
               object first by describing how it will be stored in the database
               using a schema. We then take that description and build our
               back-end models based on its shape. Next we build an api so that
               the client can interface with these objects. The problem is that
-              we must define a this additional interface to bridge the gap
-              between these two systems. Each change to the schema now requires
-              that we update the server, client, and api models to preserve the
-              interoperability of the system. This is incredibly wasteful and so
-              I spent considerable time trying to find a way to avoid this. I
-              will skip the details of my first few attempts instead describe my
-              current solution to this problem.
+              we must define this additional interface to bridge the gap between
+              the two systems. Each change to the schema now requires that we
+              update the server, client, and api models to preserve the
+              interoperability of the two. I spent considerable time trying to
+              find a way to avoid this wasteful scenario.
             </p>
             <p>
               I knew that I wanted to use Flutter to implement the user
-              interface for this application because of the promise of
+              interface for this application because of its promise of
               effortless cross-platform compatability across all devices.
               Choosing this tool came with a price though. It did not seem to me
-              like Dart was a language which had robust tooling for building
-              webservers. Since I did not want to define my models in two
-              different languages I decided to use a tool called gRPC to act as
-              the interface between the client and server. The most useful
+              like Dart was a language with a sufficiently robust toolset for
+              building webservers. Since I did not want to define my models in
+              two different languages I decided to use a tool called gRPC to act
+              as the interface between the client and server. The most useful
               feature of gRPC is that it can generate stubs for both the client
-              and server. Essentially it allows me to define my models in one
-              place then generate typesafe equivalents in my two languages, Dart
-              and Go. This allows me to write models specific to each domain
-              that extend the structure of these shared models. Unfortunately I
-              still needed to redefine the models in an ORM but i found that to
-              be a small issue since servers generally need to translate their
-              models to database equivalents anyway.
+              and server. This allows me to define my models in one place then
+              generate typesafe equivalents in my two languages, Dart and Go. I
+              then take these stubs and write wrapper classes in each language
+              to implement the domain specific functionality. Unfortunately, I
+              still needed to redefine these models in an ORM but i found that
+              to be only a minor inconvenience since servers generally need to
+              translate their models to database equivalents anyway.
             </p>
             <p>
-              I started with test-driven development and then implemented the
-              core functionality to pass those cases. My next task is to build
-              an administration site to interact with the database from the
-              client. This is a good feature to implement first since it is
-              required and helps to test out the functionality of the system as
-              it is being developed. If this every becomes a real product I
-              would like to keep it open-source and market it towards
-              home-schooling parents as a better way to help manage their
-              children's education.
+              I have test cases for for each user story implemented by the
+              server. I also implemented the beginnings of a role based
+              authentication system and a client state management solution. My
+              next task is to build an administration site to interact with the
+              database from the client. This is a good feature to implement
+              first since it is required and helps to test out the functionality
+              of the system as it is being developed. If this ever becomes a
+              real product I would like to keep it open-source and market it
+              towards home-schooling parents as a better way to help manage
+              their children's education.
             </p>
             <h2>School Projects</h2>
             <p>
@@ -239,10 +230,11 @@
                 >Connect Four</a
               >
               game with a few classmates. I devised the initial work plan and
-              built a ui by defining a set of components. I also helped write
-              the AI for the game and spent some time optimizing the code.
-              Although I had used python several times before this was a great
-              opportunity to get practice usign the language.
+              built a ui by defining a set of components then composing them
+              together. I also helped write the AI for the game and spent some
+              time optimizing the code. Although I had used python several times
+              before, this was a great opportunity to get more hands-on practice
+              in a bigger application.
             </p>
             <h2>Work Projects</h2>
             <p>
@@ -251,8 +243,8 @@
                 >Ace Hardware</a
               >. I built the account and checkout pages and implemented several
               features for the product/category search pages. I also built an
-              integration for their custom rewards system. This project was a
-              huge undertaking and I learned much though my time working on it.
+              integration for their customer rewards system. This project was a
+              huge undertaking and I learned much during my time working on it.
             </p>
           </article>
         </div>
