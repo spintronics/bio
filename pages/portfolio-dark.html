@@ -162,10 +162,10 @@
                 >Astral</a
               >. There is virtually no substance to this project. It was simply
               a playground to try out a few ideas. I was fascinated by the
-              posibility of reusing server and client code to reduce complexity.
-              Since the server needed to have access to the client components I
-              had to figure out a way to preserve the continuity between the
-              server-side render of a page and the client side.
+              possibility of reusing server and client code to reduce
+              complexity. Since the server needed to have access to the client
+              components I had to figure out a way to preserve the continuity
+              between the server-side render of a page and the client side.
             </p>
             <p>
               My current project is my most ambitious to date.
@@ -177,24 +177,24 @@
               using it to practice the art of software architecture. I have gone
               through several iterations of building the foundation for this
               project. The way I see it, one of the biggest problems in building
-              large software systems is managing complexity. In particular I
-              tend to balk at the idea of defining the same models in different
-              languages on both the server and client. This inevitably leads to
-              overhead in keeping the two in sync. Typically we define some
-              object first by describing how it will be stored in the database
-              using a schema. We then take that description and build our
-              back-end models based on its shape. Next we build an api so that
-              the client can interface with these objects. The problem is that
-              we must define this additional interface to bridge the gap between
-              the two systems. Each change to the schema now requires that we
-              update the server, client, and api models to preserve the
-              interoperability of the two. I spent considerable time trying to
-              find a way to avoid this wasteful scenario.
+              large software systems is that of managing complexity. In
+              particular I tend to balk at the idea of defining the same models
+              in different languages on both the server and client. This
+              inevitably leads to overhead in keeping the two in sync. Typically
+              we define some object first by describing how it will be stored in
+              the database using a schema. We then take that description and
+              build our back-end models based on their shape. Next, we build an
+              api so that the client can interface with these objects. The
+              problem is that we must define this additional interface to bridge
+              the gap between the two systems. Each change to the schema now
+              requires that we update the server, client, and api models to
+              preserve the interoperability of the two. I spent considerable
+              time trying to find a way to avoid this wasteful scenario.
             </p>
             <p>
               I knew that I wanted to use Flutter to implement the user
               interface for this application because of its promise of
-              effortless cross-platform compatability across all devices.
+              effortless cross-platform compatibility across all devices.
               Choosing this tool came with a price though. It did not seem to me
               like Dart was a language with a sufficiently robust toolset for
               building webservers. Since I did not want to define my models in
@@ -204,22 +204,21 @@
               and server. This allows me to define my models in one place then
               generate typesafe equivalents in my two languages, Dart and Go. I
               then take these stubs and write wrapper classes in each language
-              to implement the domain specific functionality. Unfortunately, I
-              still needed to redefine these models in an ORM but i found that
+              to implement the domain-specific functionality. Unfortunately, I
+              still needed to redefine these models in an ORM but I found that
               to be only a minor inconvenience since servers generally need to
               translate their models to database equivalents anyway.
             </p>
             <p>
-              I have test cases for for each user story implemented by the
-              server. I also implemented the beginnings of a role based
-              authentication system and a client state management solution. My
-              next task is to build an administration site to interact with the
-              database from the client. This is a good feature to implement
-              first since it is required and helps to test out the functionality
-              of the system as it is being developed. If this ever becomes a
-              real product I would like to keep it open-source and market it
-              towards home-schooling parents as a better way to help manage
-              their children's education.
+              I have test cases for each user story implemented by the server. I
+              also implemented the beginnings of a role-based authentication
+              system and a client state management solution. My next task is to
+              build an administration site to interact with the database from
+              the client. This is a good feature to implement first, since it is
+              required and helps to test out the functionality of the system as
+              it is being developed. If this ever becomes a real product I would
+              like to keep it open-source and market it towards home-schooling
+              parents as a better way to help manage their children's education.
             </p>
             <h2>School Projects</h2>
             <p>
@@ -230,7 +229,7 @@
                 >Connect Four</a
               >
               game with a few classmates. I devised the initial work plan and
-              built a ui by defining a set of components then composing them
+              built a UI by defining a set of components and then composing them
               together. I also helped write the AI for the game and spent some
               time optimizing the code. Although I had used python several times
               before, this was a great opportunity to get more hands-on practice
