@@ -15,6 +15,9 @@ html {
   background-color: var(--background1);
   background: var(--circuit-background) repeat;
 }
+body {
+  padding-left: 110px;
+}
 nav {
   position: absolute;
 }
