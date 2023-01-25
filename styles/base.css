@@ -43,7 +43,7 @@ main {
 .mobile-message h1 {
   font-size: 3rem;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   main {
     display: block;
   }
