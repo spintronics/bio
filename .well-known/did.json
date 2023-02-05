@@ -1,48 +1,26 @@
 {
-  "id": "did:web:www.kevinbrown.info",
   "@context": [
     "https://www.w3.org/ns/did/v1",
-    {
-      "@base": "did:web:www.kevinbrown.info"
-    }
+    "https://w3id.org/security/suites/jws-2020/v1"
   ],
-  "service": [
-    {
-      "id": "#linkeddomains",
-      "type": "LinkedDomains",
-      "serviceEndpoint": {
-        "origins": [
-          "https://www.kevinbrown.info/"
-        ]
-      }
-    },
-    {
-      "id": "#hub",
-      "type": "IdentityHub",
-      "serviceEndpoint": {
-        "instances": [
-          "https://hub.did.msidentity.com/v1.0/2d798869-e4e9-4039-a0a3-a84727b6947c"
-        ]
-      }
-    }
-  ],
+  "id": "did:web:www.kevinbrown.info",
   "verificationMethod": [
     {
-      "id": "#4ba466955eca4d679b7c3ac6359fcbecvcSigningKey-0fcc2",
+      "id": "did:web:www.kevinbrown.info#owner",
+      "type": "JsonWebKey2020",
       "controller": "did:web:www.kevinbrown.info",
-      "type": "EcdsaSecp256k1VerificationKey2019",
       "publicKeyJwk": {
-        "crv": "secp256k1",
         "kty": "EC",
-        "x": "ye9P9Qj60sUNGIJHM_8NifEH16-epAu918V-v1xK7g8",
-        "y": "EnFcYJoaM1bX4Jx7oCbdGX6Lb5zD8l6KXjmamo6NKg4"
+        "crv": "secp256k1",
+        "x": "sPN9ILUkW6T4hr7T5wLALn1W7MmIbdJ91fqDkD/wp9o=",
+        "y": "+XOftAyfufAeYdbbAmpAr8wU/u+lXW7QUhS+2gZqvPk="
       }
     }
   ],
   "authentication": [
-    "#4ba466955eca4d679b7c3ac6359fcbecvcSigningKey-0fcc2"
+    "did:web:www.kevinbrown.info#owner"
   ],
   "assertionMethod": [
-    "#4ba466955eca4d679b7c3ac6359fcbecvcSigningKey-0fcc2"
+    "did:web:www.kevinbrown.info#owner"
   ]
 }
